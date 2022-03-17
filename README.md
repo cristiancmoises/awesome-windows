@@ -34,7 +34,7 @@
 		<tr>
 			<td style="width:478px">
 			<ul>
-				<li>Download the file named &#39;AwesomeWindows.bat&#39; from <a href="https://github.com/massgravel/Microsoft-Activation-Scripts/releases" target="_blank">here</a></li>
+				<li>Download the file named &#39;AwesomeWindows.bat&#39; from <a href="https://github.com/cristiancmoises/awesome-windows/archive/refs/heads/main.zip" target="_blank">here</a></li>
 				<li>Extract the .zip</li>
         <li>Do you can add some programs in the script, go <a href="https://community.chocolatey.org/packages" target="_blank">here</a> and search for some, copy the code "choco install NAMEOFYOURPROGRAM" then paste below this line: @rem ----[ ADD YOUR PROGRAMS BELOW! ] ---- </li>
 				<li>Run the file as &#39;Administrator&#39;</li>
