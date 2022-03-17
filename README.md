@@ -1,11 +1,11 @@
 # 🅰🆆🅴🆂🅾🅼🅴 🆆🅸🅽🅳🅾🆆🆂
 #### > 𝙈𝙖𝙜𝙞𝙘𝙠 𝙎𝙘𝙧𝙞𝙥𝙩 𝙩𝙤 𝙪𝙥𝙜𝙧𝙖𝙙𝙚 𝙮𝙤𝙪𝙧 𝙨𝙮𝙨𝙩𝙚𝙢
+#### Para a versão em português deste readme  clique<a href="https://github.com/cristiancmoises/awesome-windows/blob/main/pt-br.md" target="_blank"> aqui</a></li>
 
     Latest Version: 1.0
     Release date: 17-03-2022
           (◍⁀‿⁀◍)ノ
 
-*Para a versão deste readme em português clique<a href="https://github.com/cristiancmoises/awesome-windows/blob/main/pt-br.md" target="_blank"> aqui</a></li>
 
 <p align=center> <img src=https://user-images.githubusercontent.com/86272521/158886487-623a376d-3719-4e0e-8a5d-db95dcc885fe.png width=100 height=100>
 <table border="1" cellpadding="1" cellspacing="0" style="width:558px">
