@@ -34,10 +34,13 @@
 		<tr>
 			<td style="width:478px">
 			<ul>
-				<li>Download the file named &#39;AwesomeWindows.bat&#39; from <a href="https://github.com/cristiancmoises/awesome-windows/archive/refs/heads/main.zip" target="_blank">here</a></li>
+				<li>Download the file .zip file <a href="https://github.com/cristiancmoises/awesome-windows/archive/refs/heads/main.zip" target="_blank">here</a></li>
 				<li>Extract the .zip</li>
+				<li>Open with notepad the awesomewindows.bat
         <li>Do you can add some programs in the script, go <a href="https://community.chocolatey.org/packages" target="_blank">here</a> and search for some, copy the code "choco install NAMEOFYOURPROGRAM" then paste below this line: @rem ----[ ADD YOUR PROGRAMS BELOW! ] ---- </li>
+				<li> Add your programs save and close </li>
 				<li>Run the file as &#39;Administrator&#39;</li>
+				<li>That's All!</li>
 </table>
 <p align=center> <img src=https://user-images.githubusercontent.com/86272521/158884308-1177b1a7-63fa-4f77-ba80-c70d7d974826.jpg width=980 height=400 >
  
