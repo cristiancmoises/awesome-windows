@@ -1,6 +1,6 @@
 :: Run as administrator
 wmic COMPUTERSYSTEM set AutomaticManagedPagefile=false
-wmic PAGEFILESET set InitialSize=10000,MaximumSize=16000
+wmic PAGEFILESET set InitialSize=12000,MaximumSize=16000
 
 @rem *** Disable Some Service ***
 sc stop DiagTrack
@@ -35,11 +35,16 @@ schtasks /Change /TN "Microsoft\Office\Office 15 Subscription Heartbeat" /Disabl
 REM schtasks /Change /TN "Microsoft\Windows\Autochk\Proxy" /Disable
 REM schtasks /Change /TN "Microsoft\Windows\CloudExperienceHost\CreateObjectTask" /Disable
 REM schtasks /Change /TN "Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector" /Disable
+REM schtasks /Change /TN "Microsoft\Windows\DiskFootprint\Diagnostics" /Disable *** Not sure if should be disabled, maybe related to S.M.A.R.T.
 REM schtasks /Change /TN "Microsoft\Windows\FileHistory\File History (maintenance mode)" /Disable
 REM schtasks /Change /TN "Microsoft\Windows\Maintenance\WinSAT" /Disable
 REM schtasks /Change /TN "Microsoft\Windows\NetTrace\GatherNetworkInfo" /Disable
 REM schtasks /Change /TN "Microsoft\Windows\PI\Sqm-Tasks" /Disable
+REM The stubborn task Microsoft\Windows\SettingSync\BackgroundUploadTask can be Disabled using a simple bit change. I use a REG file for that (attached to this post).
+REM schtasks /Change /TN "Microsoft\Windows\Time Synchronization\ForceSynchronizeTime" /Disable
+REM schtasks /Change /TN "Microsoft\Windows\Time Synchronization\SynchronizeTime" /Disable
 REM schtasks /Change /TN "Microsoft\Windows\Windows Error Reporting\QueueReporting" /Disable
+REM schtasks /Change /TN "Microsoft\Windows\WindowsUpdate\Automatic App Update" /Disable
 
 REM *** Remove Cortana ***
 REM Currently MS doesn't allow to uninstall Cortana using the above step claiming it's a required OS component (hah!)
@@ -70,9 +75,22 @@ reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\AppHost" /v EnableWebCon
 REM - Let websites provide locally...
 reg add "HKCU\Control Panel\International\User Profile" /v HttpAcceptLanguageOptOut /t REG_DWORD /d 1 /f
 
+@REM WiFi Sense: HotSpot Sharing: Disable
+reg add "HKLM\Software\Microsoft\PolicyManager\default\WiFi\AllowWiFiHotSpotReporting" /v value /t REG_DWORD /d 0 /f
+@REM WiFi Sense: Shared HotSpot Auto-Connect: Disable
+reg add "HKLM\Software\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots" /v value /t REG_DWORD /d 0 /f
+
+@REM Change Windows Updates to "Notify to schedule restart"
+reg add "HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v UxOption /t REG_DWORD /d 1 /f
+@REM Disable P2P Update downlods outside of local network
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" /v DODownloadMode /t REG_DWORD /d 0 /f
 
 @REM *** Disable Cortana & Telemetry ***
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v "AllowCortana" /t REG_DWORD /d 0
+
+REM *** Hide the search box from taskbar. You can still search by pressing the Win key and start typing what you're looking for ***
+REM 0 = hide completely, 1 = show only icon, 2 = show long search box
+reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" /v "SearchboxTaskbarMode" /t REG_DWORD /d 0 /f
 
 REM *** Disable MRU lists (jump lists) of XAML apps in Start Menu ***
 reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Start_TrackDocs" /t REG_DWORD /d 0 /f
@@ -88,13 +106,17 @@ reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeli
 PowerShell -Command "Get-AppxPackage *3DBuilder* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *Cortana* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *Getstarted* | Remove-AppxPackage"
+PowerShell -Command "Get-AppxPackage *WindowsAlarms* | Remove-AppxPackage"
+PowerShell -Command "Get-AppxPackage *WindowsCamera* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *bing* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *MicrosoftOfficeHub* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *OneNote* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *people* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *WindowsPhone* | Remove-AppxPackage"
+PowerShell -Command "Get-AppxPackage *photos* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *SkypeApp* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *solit* | Remove-AppxPackage"
+PowerShell -Command "Get-AppxPackage *WindowsSoundRecorder* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *xbox* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *windowscommunicationsapps* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *zune* | Remove-AppxPackage"
@@ -104,6 +126,8 @@ PowerShell -Command "Get-AppxPackage *CommsPhone* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *ConnectivityStore* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *Microsoft.Messaging* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *ContentDeliveryManager* | Remove-AppxPackage"
+PowerShell -Command "Get-AppxPackage *Microsoft.WindowsStore* | Remove-AppxPackage"
+
 
 @rem NOW JUST SOME TWEAKS
 REM *** Show file extensions in Explorer ***
