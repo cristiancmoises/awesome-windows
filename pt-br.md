@@ -5,7 +5,7 @@
     Data de lançamento: 17-03-2022
           (◍⁀‿⁀◍)ノ
 
-<p align=center> <img src=https://user-images.githubusercontent.com/86272521/158886487-623a376d-3719-4e0e-8a5d-db95dcc885fe.png largura=100 altura=100>
+<p align=center> <img src=https://user-images.githubusercontent.com/86272521/158886487-623a376d-3719-4e0e-8a5d-db95dcc885fe.png width=100 height=100>
 <table border="1" cellpadding="1" cellspacing="0" style="width:558px">
 <tbody>
 <tr>
