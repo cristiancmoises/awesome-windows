@@ -127,7 +127,9 @@ PowerShell -Command "Get-AppxPackage *ConnectivityStore* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *Microsoft.Messaging* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *ContentDeliveryManager* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *Microsoft.WindowsStore* | Remove-AppxPackage"
-
+PowerShell -Command "Get-AppxPackage *windowsmaps* | Remove-AppxPackage"                                           
+PowerShell -Commmand "Get-AppxPackage *gethelp* | Remove-AppxPackage"                                               
+PowerShell -Command "Get-AppxPackage *yourphone* | Remove-AppxPackage"
 
 @rem NOW JUST SOME TWEAKS
 REM *** Show file extensions in Explorer ***
@@ -267,9 +269,4 @@ choco install adobeair
 pause
 echo.
 echo Your installation is complete.
-pause
-:: Run as administrator
-wmic COMPUTERSYSTEM set AutomaticManagedPagefile=false
-wmic PAGEFILESET set InitialSize=8000,MaximumSize=12000
-
 pause
