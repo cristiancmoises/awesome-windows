@@ -16,7 +16,7 @@
 		<tr>
 			<td style="width:550px">
 			<ul>
-				<li style="text-align:justify">Remove Telemetry<br/></li>
+				<li style="text-align:justify">Remove Telemetry and Ads<br/></li>
 				<li style="text-align:justify">Remove Windows Apps (DEBLOATER)</li>
 				<li style="text-align:justify">Enable Paging File and set to 12GB-16GB</li>
 				<li style="text-align:justify">Auto Install Programs using Chocolatey</li>
