@@ -1,4 +1,4 @@
-# 🅰🆆🅴🆂🅾🅼🅴 🆆🅸🅽🅳🅾🆆🆂
+#AWESOME WINDOWS - Upgrade Your Windows Fastly!
 #### > 𝙈𝙖𝙜𝙞𝙘𝙠 𝙎𝙘𝙧𝙞𝙥𝙩 𝙩𝙤 𝙪𝙥𝙜𝙧𝙖𝙙𝙚 𝙮𝙤𝙪𝙧 𝙨𝙮𝙨𝙩𝙚𝙢
 #### Para a versão em português deste readme  clique<a href="https://github.com/cristiancmoises/awesome-windows/blob/main/pt-br.md" target="_blank"> aqui</a></li>
 
