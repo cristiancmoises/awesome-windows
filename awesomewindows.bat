@@ -2,6 +2,14 @@
 wmic COMPUTERSYSTEM set AutomaticManagedPagefile=false
 wmic PAGEFILESET set InitialSize=12000,MaximumSize=16000
 
+REM ----------------------------------------------------------------------------------------------------------
+REM ### Visual performance options
+REM ----------------------------------------------------------------------------------------------------------
+	REM TITLE: Change Visual Effects Settings
+		REM LINK: https://www.tenforums.com/tutorials/6377-change-visual-effects-settings-windows-10-a.html
+			REM: OPTIONS: 0 (zero) for Let Windows choose what's best for my computer settings. 1 for Adjust for best appearance settings. 2 for Adjust for best Performance settings. 3 for Custom settings.
+				REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /V VisualFXSetting /t REG_DWORD /d 2 /F
+
 @rem *** Disable Some Service ***
 sc stop DiagTrack
 sc stop diagnosticshub.standardcollector.service
