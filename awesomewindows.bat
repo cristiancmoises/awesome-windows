@@ -136,8 +136,7 @@ PowerShell -Command "Get-AppxPackage *ConnectivityStore* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *Microsoft.Messaging* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *ContentDeliveryManager* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *Microsoft.WindowsStore* | Remove-AppxPackage"
-PowerShell -Command "Get-AppxPackage *windowsmaps* | Remove-AppxPackage"                                           
-PowerShell -Commmand "Get-AppxPackage *gethelp* | Remove-AppxPackage"                                               
+PowerShell -Command "Get-AppxPackage *windowsmaps* | Remove-AppxPackage"                                                                                
 PowerShell -Command "Get-AppxPackage *yourphone* | Remove-AppxPackage"
 
 @rem NOW JUST SOME TWEAKS
